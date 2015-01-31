@@ -34,8 +34,9 @@
 
 		<style type="text/css">
 
-			body {
-				background: url("img/back.png") !important;
+			#ephlogo {
+				border:none;
+				background: rgba(0,0,0,.6);
 			}
 
 			.mainTitle {
@@ -159,8 +160,8 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1 class="mainTitle">Every Pixel Hurts</h1>
+				<section data-state="coverpage" id="coverpage">
+					<img src="img/ephlogo.png" id="ephlogo">
 					<h4>A quest for really open UX design</h4>
 					<h5>Pablo Cúbico - FOSDEM 2015</h5>
 				</section>
@@ -236,7 +237,7 @@
 
 					<section>
 						<h2>Common misconceptions and myths</h2>
-						<img src="img/gestalt.jpg">
+						<img src="img/gestalt.jpg" style="max-width: 45%">
 						<aside class="notes">
 							People have different views about what UX is or should be. Let's start by debunking some common misconceptions and myths around UX.
 						</aside>
@@ -474,7 +475,52 @@
 					</section>
 
 					<section>
-						<h2>And some others...</h2>
+						<h2>12. No room for you</h2>
+						<aside class="notes">
+							Is design welcomed? If it's not in the mind of the current contributors, getting them to work with you on a timely basis will be impossible. 
+							Closed groups leave room for no one, sometimes it is difficult enough just trying to contribute, even more when you are a designer, an alien into the development world. That's why those T-shaped professionals are needed.
+						</aside>
+					</section>
+
+					<section>
+						<h2>13. No visibility</h2>
+						<aside class="notes">
+							Another situation may occur: you contribute, you send a pull request, a patch... and then no one sees it.
+							It happened to me, I have some trouble getting people involved in things as Diaspora's identity. 
+							Many developers are not interested in design talk, many consider it irrelevant. This could also affect you emotionally, if you invest a couple of hours in a project, with confidence, and your worked gets drowned in a sea of nothingness, you'll get angry. Staying cool requires a lot of patience.
+						</aside>
+					</section>
+
+					<section>
+						<h2>14. Style dilution</h2>
+						<aside class="notes">
+							This is mostly for pure designers. Style will always have a strong influence from a core designer. Why? Because that's the artistic part of design, it's really hard to develop a style for a product by trying to please everyone. 
+							This is one of the hardest points, because this is the place where collaboration becomes an obstacle.
+							For that reason, you have to struggle to justify your stylistic and aesthetic choices with reasoning, good will, and be ready to discuss a lot.
+							But as you know, a picture is worth a thousand words, so maybe if you show your work and the community engages with your style, maybe making a few compromises, then you can earn the trust you need to continue working.
+							Community has to trust and value a designer's vision, your style, and your aesthetics. 
+							By having a single person's vision and trust, UI coders and interested people can work faster under that aesthetic umbrella.
+						</aside>
+					</section>
+
+					<section>
+						<h2>15. Assumptions, assumptions everywhere.</h2>
+						<aside class="notes">
+							Sad but true, when a project is ongoing for a few years and the UX remains pretty much untouched, be pretty sure that everyone is making assumptions about what users do or want with almost no data. 
+							Common sense can be your friend or your enemy in this area.
+						</aside>
+					</section>
+
+					<section>
+						<h2>16. Resisting change</h2>
+						<aside class="notes">
+							We all heard this one, as it often happens in our daily lives. Change is hard, not everyone welcomes it and you'll find a lot of "oh, it has been this way for two years, why change it". 
+							However, you have to listen to that resistance, maybe you are trying to change something that actually... shouldnt be changed...
+						</aside>
+					</section>
+
+					<section>
+						<h2>17, 18, 19... many others...</h2>
 						<h3>Have you tried? Share your experience!</h3>
 						<aside class="notes">
 							So there are a lot of other issues when it comes to integrate UX design into the FOSS development processes. Share your findings now or after the slides.
@@ -492,14 +538,17 @@
 
 					<section>
 						<h2>0: Introduce yourself</h2>
+						<h3>Become a member</h3>
 						<ul>
+							<li>Invite yourself to the party</li>
 							<li>Identify some measurable problems</li>
 							<li>Do some work to show your potential</li>
 							<li>Be bold, there is always time to go back</li>
 							<li>Be humble</li>
 						</ul>
-						<aside class="notas">
+						<aside class="notes">
 							The first need you'll to step into a FOSS project as a UX designer is introducing yourself. If you are being honest about your goals, it will come easy. Set your goals, find your motivations, don't try to be a hero.
+							But be bold, invite yourself to it. No one is going to ask you to improve the UX of a particular project, if you believe you can, just jump aboard and make a suggestion. Some will welcome you, some not, some will just ignore you, but then you'll know if there is room for contributing or not.
 						</aside>
 					</section>
 
@@ -523,6 +572,7 @@
 							to build the basics of User Experience for a product, and to do many other
 							tasks, specially, the most important one: user testing.
 							First, you'll have to get validation from the community. Contributing a patch could be a great start, but also, showing your good will and your expertise could help.
+							Remember, you'll not go anywhere unless you are a member of the community, so you'll need to have the social skills to do so.
 						</aside>
 					</section>
 
@@ -597,9 +647,7 @@
 							What can be fixed through only CSS?
 							What can be done with just a line of code?
 							There are many UX situations that can be drastically
-							improved by just a few fixes. If you have the skills, you 
-							can even show how a minor change would impact the UX in a
-							browser window.
+							improved by just a few fixes. If you have the skills, you can even show how a minor change would impact the UX in a browser window.
 						</aside>
 					</section>
 
@@ -617,9 +665,7 @@
 							of help from others.
 							There is always people fond of UX and UI amongst coders. 
 							Some coders hate talking about UIs, but some actually love it.
-							You can also recruit other kinds of people with different skills, 
-							to conduct a user testing session, to make prototypes, to translate 
-							things, etc.
+							You can also recruit other kinds of people with different skills, to conduct a user testing session, to make prototypes, to translate things, etc.
 						</aside>
 					</section>
 
@@ -670,18 +716,35 @@
 					</section>
 
 					<section>
-						<h2>11. Use open formats</h2>
+						<h2>11. Adapt to the flow</h2>
+						<ul>
+							<li>Version control</li>
+							<li>Issue trackers</li>
+							<li>Languages (ruby, python, etc)</li>
+							<li>Frameworks</li>
+							<li>Contribution platforms</li>
+							<li>Mailing lists</li>
+							<li>IRC Chatrooms</li>
+						</ul>
+						<aside class="notes">
+							Don't get into the group proposing new tools if you want things to go smoothly. On the contrary, learn where the contributors hang out, learn the current tools, platforms and frameworks used. Dive into the flow and get yourself soaked with it, until you become another member of the group. You'll know when you are.
+							Don't be a solo warrior that comes up with magic solutions once a week.
+							Contributing is not always making deliverables, or writing code. Discussing can be also contributing, teaching is contributing, helping others is contributing.
+						</aside>
+					</section>
+
+					<section>
+						<h2>12. Use open formats</h2>
 						<ul>
 							<li>Educate designers on open tools (Inkscape, GIMP, etc)</li>
 							<li>Make assets freely available</li>
 						</ul>
 						<aside class="notes">
-							As a free software advocate, I really encourage everyone to use
-							open formats. I've been a closed format slave for way too long, 
-							and if we are talking about UX for free software, then why don't we
-							do it for real and start using these formats.
+							As a free software advocate, I really encourage everyone to use	open formats. I've been a closed format slave for way too long, 
+							and if we are talking about UX for free software, then why don't we do it for real and start using these formats.
 						</aside>
 					</section>
+
 
 					<section>
 						<h2>What else?</h2>
@@ -761,6 +824,11 @@
 							<li>Work for consistency</li>
 							<li>Find proper tools for distributed work</li>
 							<li>Build a broader roadmap</li>
+							<li>Work on the Diaspora UI<br>
+								<a target="_blank" style="font-size: 14pt" href="diaspora-current.png"> Current UI</a>
+								<a target="_blank" style="font-size: 14pt" href="diaspora-override.png"> My Stylish override</a>
+								<a target="_blank" style="font-size: 14pt" href="img/diaspora-ux-experiment.png"> My experimental UX pod</a>
+							</li>
 							<li><span class="fragment highlight-blue">Want to join?</span></li>
 						</ul>
 						<aside class="notes">
@@ -791,23 +859,25 @@
 
 				<section>
 					<section>
-						<h1>Every Pixel Hurts</h1>
-						<h2>Building an open UX ecosystem</h2>
-						<h3>everypixelhurts.tumblr.com</h3>
-						<ul>
-							<li>Building free software UX tools</li>
-							<li>Contact place for designers</li>
-							<li>Discuss sustainability</li>
-						</ul>
-						<aside class="notes">
-							I'm trying to build an open UX ecosystem with the name of this talk: "Every Pixel Hurts".
-							I have some ideas that I want to share with you.
-						</aside>
+						<div style="">
+							<img src="img/ephlogo.png" style="width: 300px">
+							<h2>An open UX ecosystem</h2>
+							<h3>everypixelhurts.tumblr.com</h3>
+							<ul>
+								<li>Building free software UX tools</li>
+								<li>Contact place for designers</li>
+								<li>Discuss sustainability</li>
+							</ul>
+							<aside class="notes">
+								I'm trying to build an open UX ecosystem with the name of this talk: "Every Pixel Hurts".
+								I have some ideas that I want to share with you, and maybe you can help.
+							</aside>
+						</div>
 					</section>
 
 					<section>
 						<h2>Build free web-based UX tools</h2>
-						<h3>Coders wanted</h3>
+						<h3>Coders wanted!</h3>
 						<ul>
 							<li>Invision-like clickable prototyping</li>
 							<li>User test recorders (screencast)</li>
@@ -922,6 +992,39 @@
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
+			});
+
+			function randomizeBackground() {
+				var r = parseInt(200 * Math.random()),
+				 g = parseInt(200 * Math.random()),
+				 b = parseInt(200 * Math.random());
+				var backgroundColor = "rgba(" + r + ", " + g + ", " + b + ", 1)";
+				document.getElementsByTagName("body")[0].style.background = backgroundColor;
+			}
+			
+			window.randomizeInterval = 0;
+
+			function setTheInterval() {
+				window.randomizeInterval = window.setInterval(randomizeBackground, 1000)				
+			}
+
+			Reveal.addEventListener( 'ready', function( event ) {
+
+				if (event.currentSlide.id == "coverpage") {
+					randomizeBackground();
+					setTheInterval();
+				}
+				Reveal.addEventListener( 'slidechanged', function( event ) {
+					if (event.currentSlide.id != "coverpage") {
+						if (window.randomizeInterval) {
+							window.clearInterval(window.randomizeInterval);
+						}
+						document.getElementsByTagName("body")[0].style.background =  "url(img/back.png)";
+					} else {
+						setTheInterval();
+					}
+				} );
+
 			});
 
 		</script>

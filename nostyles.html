@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Every Pixel Hurts</title>
+
+		<style type="text/css">
+			img {
+				display: none;
+			}
+			body * {
+				font-size: 8pt;
+				font-family: sans-serif;
+			}
+			body {
+				width: 70%;
+			}
+			aside {
+				font-style: italic;
+			}
+
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 class="mainTitle">Every Pixel Hurts</h1>
+					<h4>A quest for really open UX design</h4>
+					<h5>Pablo Cúbico - FOSDEM 2015</h5>
+				</section>
+
+				<section>
+					<h5>About me</h5>
+					<img class="noStyle" width="350" src="img/mozilla-white.png" alt=""><br>
+					<img class="noStyle" style="margin-bottom: 40px" width="350" src="img/hh_horizontal.gif" alt=""><br>
+					<img class="noStyle" width="350" src="img/diaspora-logo-roboto.png" alt="">
+					<aside class="notes">
+						I'm a Mozilla Rep in my country, despite having some differences with some latest year's decisions.
+						Also, I'm the founder of the local chapter of Hacks/Hackers in my hometown. For those of you who don't know what Hacks/Hackers is, it's a crossover between journalists and developers for data journalism and related topics. As a first project, we mapped the drug related murders on my city for 2013.
+						And last but not least, I recently started contributing very slowly to Diaspora, I hope the pace goes up next year. 
+					</aside>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>What is Open Source UX?</h2>
+						<aside class="notes">
+							So, we are here to talk about Open Source UX, or UX for free and open source projects.
+							Sadly, this is something that doesn't quite exists yet, so let's use this time to talk about UX design processes and about opening them. 
+							But even before asking what is open source UX, we should ask this instead: 
+						</aside>
+					</section>
+
+					<section>
+						<h2>What is UX anyway?</h2>
+						<img src="img/sasquatch.jpg" style="max-width: 45%">
+						<aside class="notes">
+							As the sasquatch (or bigfoot), an actual definition of UX is a really hard thing to find. 
+							There is a lot of noise around what UX actually is.
+							Let me introduce you to what I think UX is so we can all be in the same page for that matter.
+						</aside>
+					</section>
+
+					<section>
+						<h2>UX stands for <span class="fragment highlight-blue">USER</span>&nbsp;<span class="fragment highlight-blue">EXPERIENCE</span></h2>
+						<img style="max-width: 40%" src="img/cagememe.jpg" alt="">
+						<aside class="notes">
+							Ok, I'm stating the obvious here. But let's use this as an exercise to clear our heads and reboot what we think of user experience.
+						</aside>
+					</section>
+
+					<section>
+						<h2>User Experience is...</h2>
+						<h3>the experience a user has while using a product.</h3>
+						<ul>
+							<li class="fragment">It can be measured</li>
+							<li class="fragment">It can be improved</li>
+							<li class="fragment">It can be <em>developed</em> and <em>designed</em></li>
+						</ul>
+						
+						<aside class="notes">
+							The experience of a user can be measured through many tools, mostly, by the user's feedback. 
+						</aside>
+					</section>
+
+					<section>
+						<h2>GOOD User Experience</h2>
+						<h3>
+							<span class="fragment">Symbiotic</span><span class="fragment">, Prosthetic</span><span class="fragment">, Uninterrupted</span> <span class="fragment">, Continuous</span>
+						</h3>
+						<div style="clear: both"></div>
+						<img style="max-width: 40%" src="img/patasderana.jpg" alt="">
+						
+						<aside class="notes">
+							Most authors try to avoid defining some universal rules, and I hate that. So I brought some of my own to share with you.
+							I like to think of user experience (and design in all its flavors), as the way in which we communicate with technology. 
+						</aside>
+					</section>
+
+					<section>
+						<h2>Common misconceptions and myths</h2>
+						<img src="img/gestalt.jpg">
+						<aside class="notes">
+							People have different views about what UX is or should be. Let's start by debunking some common misconceptions and myths around UX.
+						</aside>
+					</section>
+
+					<section>
+						<h2>"UX is a process"</h2>
+						<h3>No, UX is an <em>attribute</em> of your product.</h3>
+						<h3 class="fragment">UX <em>design</em> is a process.</h3>
+						<img src="img/okmeme.jpg" style="max-width: 70%">
+						<aside class="notes">
+							Say what? UX is not a process?.
+							You will find tons of sites saying how and why "UX" itself is a process. Well, if you say "UX", you are not talking about a process, you are talking about an attribute of your product (or someone else's).
+							Remember, UX is an attribute, UX DESIGN is a process, or if you prefer, UX DEVELOPMENT.
+						</aside>
+					</section>
+
+					<section>
+						<h2>UX is not beauty</h2>
+						<img src="img/vitruvio.jpg" style="max-width: 45%">
+						<aside class="notes">
+							Of course beauty plays an important role in something that we call "experience", but beauty is an elusive concept, you can try to measure it and going golden ratio all over your buttons and headings, but that won't magically translate into good user experience.
+							However, beautiful design conveys many values, as TRUST. Users will often trust a beautiful design over a flawed one. 
+							We will come back to this later.
+						</aside>
+					</section>
+
+					<section>
+						<h2>UX is UI</h2>
+						<h3>UX involves many other things</h3>
+						<ul>
+							<li class="fragment">Visual design</li>
+							<li class="fragment">Interaction design</li>
+							<li class="fragment">User testing</li>
+							<li class="fragment">Performance</li>
+							<li class="fragment">etc.</li>
+						</ul>
+						<aside class="notes">
+							UX is more than just UI design. UX is about developing your user's experience, and that alone requires involvement from a lot of different areas.
+						</aside>
+					</section>
+
+					<section>
+						<h3>UX vs. UI: a few samples</h3>
+						<img style="max-width: 40%" src="img/not-ui.jpg" alt="">
+						<p>Don't worry, I'll read aloud.</p>
+					</section>
+
+					<section>
+						<h2>"Drop an asset library<br>and BAM!: UX"</h2>
+						<img style="max-width: 40%" src="img/ui-kit-1.jpg" alt="">
+						<aside class="notes">
+							UX design is a process, it has to be deeply embedded into the development process,
+							as it is iterative.<br>
+							Open UI libs may solve a problem or two, but UX is different in every product,
+							so it will always be developed for that product only.
+						</aside>
+					</section>
+
+					<section>
+						<h2>The infamous<br>"Design is art" myth</h2>
+						<blockquote class="prettyBig prettyPadded" cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						"<strong>open source design</strong> is an oxymoron."<br>
+						-Chris Messina
+						</blockquote>
+						<aside class="notes">
+							Whoa! Another title.
+							This is a very unfortunate and misleading quote.
+							Some say design is art so it can't be done by collaborating, but design
+							is not merely art. Art is totally unpaired with function, maybe we can
+							discuss what's the "function" of art, but that's another topic.
+							Let's see an industrial design example.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Design is form + function</h3>
+						<img src="img/iron.jpg" alt="">
+						<aside class="notes">
+							Style is unique to every designer, but design problems
+							are constrained by the needs of function.
+							Design comes from architecture (mostly), so does industrial design.
+							Take this Siemens iron for example, it serves a purpose, so
+							it basically looks like any iron, the color choice and ornamental
+							details may vary from one to another, but the general function
+							is dominant.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Flawed design</h3>
+						<img src="img/bad-design.jpg" alt="">
+						<aside class="notes">
+							When design fails to serve its purpose, this happens.
+							So this is not design, instead, it's a pretty strong art piece.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Style varies</h3>
+						<h4>It's a <span class="fragment highlight-blue">visual design</span> problem, not a UX one</h4>
+						<img src="img/design-styles.jpg" alt="">
+						<aside class="notes">
+							Style varies from one designer to another. This can lead to
+							consistency issues, but it can be definitely solved by 
+							agreeing on style conventions which are deeply intertwined with
+							identity choices.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Current status</h2>
+						<img src="img/no-idea.jpg">
+					</section>
+
+					<section>
+						<h2>"Free Software UX sucks"</h2>
+						<h3 class="fragment">"Commercial software does better"</h3>
+						<aside class="notes">
+							I hate this quotes. This is yet another misconception, and a generalisation that really hurts our community.
+							Also, big corporations spend a lot of money to convince you that their UX is good. Let me show you an example from real life.
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/instagram1.png"><br>
+						<img src="img/instagram2.png">
+						<aside class="notes">
+							I think these pictures speak for themselves.
+						</aside>
+					</section>
+
+
+					<section>
+						<h2>Problems in FOSS UX</h2>
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h2>1. Lack of participation</h2>
+						<aside class="notes">
+							There is an obvious lack of involvement of designers into 
+							free software projects.
+						</aside>
+					</section>
+
+					<section>
+						<h2>2. No clear paths <br>for contribution</h2>
+						<aside class="notes">
+							Often, when you go to a project wiki, docs, issue trackers, community
+							forums or whatever, it is hard to find which UX problems are there
+							and how to solve them. 
+							You'll find more "UI errors" than "UX problems". 
+						</aside>
+					</section>
+
+					<section>
+						<h2>3. Devs don't know where to start</h2>
+						<aside class="notes">
+							People who is actually coding the UI don't know about the UX design process
+							and they don't know where to start.
+						</aside>
+					</section>
+
+					<section>
+						<h2>4. Disconnected lone rangers</h2>
+						<aside class="notes">
+							UI coders who don't work together produce both inconsistent code and UIs.
+							Not having "UI teams" working towards consistency creates random pieces
+							of UI goodness distributed in isolated pieces through a product.
+						</aside>
+					</section>
+
+					<section>
+						<h2>5. Style differences</h2>
+						<aside class="notes">
+							When you actually have designers contributing, there will be style differences
+							between them. As an artist, each designer has a unique style. These need to be sorted
+							through a higher convention.
+						</aside>
+					</section>
+
+					<section>
+						<h2>6. "Can I Haz" requests</h2>
+						<aside class="notes">
+							Many times designers come with ideas that are unrealistic
+							and difficult to implement, like whole new features. 
+							These won't help as much as doing little improvements.
+						</aside>
+					</section>
+
+					<section>
+						<h2>7. Everyone is a designer</h2>
+						<aside class="notes">
+							Open source is about collaboration, but sometimes this leads
+							to hundreds of people trying to be involved in design choices.
+						</aside>
+					</section>
+
+					<section>
+						<h2>8. Customize all the things</h2>
+						<img src="img/customize-everything.jpg" alt="">
+						<aside class="notes">
+							Free software makers often try to make software as customizable as possible.
+							This is deeply linked to the heart and nature of open source, but it's really
+							difficult to do well, and it leads to a lack of identity on many products.
+						</aside>
+					</section>
+
+					<section>
+						<h2>9. No proper tools</h2>
+						<aside class="notes">
+							Most tools of the trade for UX designers are closed and paid.
+							We definitely need to find the right tools for design collaboration, 
+							design voting, UX prototyping, etc.
+						</aside>
+					</section>
+
+					<section>
+						<h2>10. No T-shaped devs/designers</h2>
+						<aside class="notes">
+							It's hard to find those with the skills to do both design and development. It is really useful to have one of those T-shaped people to integrate both worlds into one.
+						</aside>
+					</section>
+
+					<section>
+						<h2>11. Code health</h2>
+						<aside class="notes">
+							UI code can be a real mess. It's hard to do improvements on an unhealthy codebase, changing things as the underlying layout sometimes is just plainly impossible. You'll need to find a compromise between code quality, refactoring and improvement pace to even start minor things.
+						</aside>
+					</section>
+
+					<section>
+						<h2>And some others...</h2>
+						<h3>Have you tried? Share your experience!</h3>
+						<aside class="notes">
+							So there are a lot of other issues when it comes to integrate UX design into the FOSS development processes. Share your findings now or after the slides.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>A roadmap for Contributing UX</h2>
+						<h4>Challenges and opportunities</h4>
+						<img class="noStyle" src="img/git-design-polish.jpg">
+					</section>
+
+					<section>
+						<h2>0: Introduce yourself</h2>
+						<ul>
+							<li>Identify some measurable problems</li>
+							<li>Do some work to show your potential</li>
+							<li>Be bold, there is always time to go back</li>
+							<li>Be humble</li>
+						</ul>
+						<aside class="notas">
+							The first need you'll to step into a FOSS project as a UX designer is introducing yourself. If you are being honest about your goals, it will come easy. Set your goals, find your motivations, don't try to be a hero.
+						</aside>
+					</section>
+
+					<section>
+						<h2>1. Get to know the community!</h2>
+						<h4>Biggest perk from FOSS projects</h4>
+						<ul>
+							<li>Always ask the community</li>
+							<li>Get validation</li>
+							<li>Be honest</li>
+							<li>Invite others to join your quest</li>
+							<li>Give recognition</li>
+							<li>Don't take over</li>
+							<li>Relax your ego</li>
+						</ul>
+						<img src="img/communities.jpg" height="300" alt="">
+						<aside class="notes">
+							Community is the biggest perk we have from FOSS projects.
+							This is what most commercial projects don't have. 
+							It has it's pros and cons, but overall, we can leverage the community
+							to build the basics of User Experience for a product, and to do many other
+							tasks, specially, the most important one: user testing.
+							First, you'll have to get validation from the community. Contributing a patch could be a great start, but also, showing your good will and your expertise could help.
+						</aside>
+					</section>
+
+					<section>
+						<h2>2. Consider starting with identity</h2>
+						<ul>
+							<li>Analyze current status (colors, fonts, etc)</li>
+							<li>Gather community opinions (survey)</li>
+							<li>Begin with a proposal</li>
+							<li>Explain why brand matters</li>
+							<li>Beware of sensitive stuff (i.e.: LOGO)</li>
+						</ul>
+						<img src="img/identity.jpg" height="300" alt="">
+						<aside class="notes">
+							What's the status of identity on an X project?
+							Identity will give you the basis for color choices, fonts, and it's also the first part of User Experience.
+							By gathering the current status of identity and asking the community to define a better brand for the product.
+						</aside>
+					</section>
+
+					<section>
+						<h2>3. Identify current UX problems</h2>
+						<ul>
+							<li>Ask people, they know</li>
+							<li>How about some user testing?</li>
+						</ul>
+						<aside class="notes">
+							Some UX problems may already be known in the community.
+							Always ask the community first before asserting an assumption.
+							Remember, assumptions are not good for UX. Data is.
+						</aside>
+					</section>
+
+					<section>
+						<h2>4. Get UX into the integration loop</h2>
+						<ul>
+							<li>Make UX a phase of development</li>
+							<li>Get developers in the loop</li>
+							<li>Test everything</li>
+						</ul>
+						<aside class="notes">
+							UX should be deeply integrated into the software
+							development process, as in a continuous integration scheme.
+							Do user testing for UI changes.
+						</aside>
+					</section>
+
+					<section>
+						<h2>5. Prototype and discuss</h2>
+						<ul>
+							<li>A/B testing (if possible)</li>
+							<li>Test prototypes</li>
+							<li>Give UI coders a finished prototype</li>
+						</ul>
+						<aside class="notes">
+							Once you get the prototype right, the widgets in place
+							and the interactions in a well written spec, the task
+							for developers is really easy. 
+						</aside>
+					</section>
+
+					<section>
+						<h2>6. Baby steps, small changes</h2>
+						<ul>
+							<li>Don't go for the full redesign</li>
+							<li>Propose small fixes</li>
+							<li>Minimize coding effort</li>
+							<li>Identify as many small problems as possible</li>
+							<li>If possible, code something and show it</li>
+						</ul>
+						<aside class="notes">
+							What can be fixed through only CSS?
+							What can be done with just a line of code?
+							There are many UX situations that can be drastically
+							improved by just a few fixes. If you have the skills, you 
+							can even show how a minor change would impact the UX in a
+							browser window.
+						</aside>
+					</section>
+
+					<section>
+						<h2>7. Find a team</h2>
+						<ul>
+							<li>There is people working on UI</li>
+							<li>Ask for participation</li>
+							<li>Identify potential "UX people"</li>
+							<li>Get coders, translators, users, testers</li>
+							<li>Create conventions and standards for consistency</li>
+						</ul>
+						<aside class="notes">
+							Doing UX solo is not an easy task. You'll need tons
+							of help from others.
+							There is always people fond of UX and UI amongst coders. 
+							Some coders hate talking about UIs, but some actually love it.
+							You can also recruit other kinds of people with different skills, 
+							to conduct a user testing session, to make prototypes, to translate 
+							things, etc.
+						</aside>
+					</section>
+
+					<section>
+						<h2>8. Set goals and deadlines</h2>
+						<ul>
+							<li>Deadlines are the ultimate fast decision makers</li>
+							<li>Use UX metrics to set goals</li>
+						</ul>
+						<aside class="notes">
+							No roadmap is a roadmap without goals and deadlines.
+							Define sprints and use deadlines and milestones to 
+							give others feedback of what your progress is.
+						</aside>
+					</section>
+
+					<section>
+						<h2>9. Show the larger picture</h2>
+						<ul>
+							<li>Build a longer roadmap</li>
+							<li>Get approval from the community</li>
+							<li>Be realistic</li>
+							<li>Review constantly</li>
+							<li>If needed, reformulate</li>
+						</ul>
+						<aside class="notes">
+							A mid-term roadmap will build trust around your work and 
+							get everybody's expectations on the same page.
+						</aside>
+					</section>
+
+					<section>
+						<h2>10. Avoid the "taste police"</h2>
+						<h4>Non-constructive criticism</h4>
+						<ul>
+							<li>"It feels weird..."</li>
+							<li>"I hate pink..."</li>
+							<li>"I don't like the font"</li>
+							<li>Ignore trolls and haters</li>
+							<li>Justify with reason and sources</li>
+						</ul>
+						<aside class="notes">
+							You'll get a lot of subjective opinions specially after
+							the prototyping phase, when design starts to look real.
+							Beware of those really subjective things and justify your choices
+							with reasoning, knowledge and of course, links to sources.
+						</aside>
+					</section>
+
+					<section>
+						<h2>11. Use open formats</h2>
+						<ul>
+							<li>Educate designers on open tools (Inkscape, GIMP, etc)</li>
+							<li>Make assets freely available</li>
+						</ul>
+						<aside class="notes">
+							As a free software advocate, I really encourage everyone to use
+							open formats. I've been a closed format slave for way too long, 
+							and if we are talking about UX for free software, then why don't we
+							do it for real and start using these formats.
+						</aside>
+					</section>
+
+					<section>
+						<h2>What else?</h2>
+						<ul>
+							It's up to you! Have any ideas? Share them.
+						</ul>
+						<aside class="notes">
+							
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<img class="noStyle" width="350" src="img/diaspora-logo-roboto.png" alt="">
+						<h4>A case study (kinda)</h4>
+					</section>
+
+					<section>
+						<h2>My first steps</h2>
+						<ul>
+							<li>Got advice (from Sean Tilley): get validation</li>
+							<li>Contributed a patch</li>
+							<li>Then contributed a greater patch</li>
+						</ul>
+						<aside class="notes">
+							My very first contributions to Diaspora were some UI related
+							patchs, but I was really anxious to explain why I though that 
+							we could do great improvements with little effort.
+						</aside>
+					</section>
+
+					<section>
+						<h2>First proposals</h2>
+						<ul>
+							<li>
+								Diaspora foundation site<br>
+								<a style="font-size: 11pt" href="http://diasporafoundation.org" target="_blank">Current site</a>
+								<a style="font-size: 11pt" target="_blank" href="http://diaspora-site.vispress.com">First proposal</a>
+								<a style="font-size: 11pt" href="img/diasporafoundation-old.png" target="_blank">Current site screenshot</a>
+								<a style="font-size: 11pt" target="_blank" href="img/diasporasite-new.png">First proposal screenshot</a>
+							</li>
+							<li>Explained every choice</li>
+							<li>Got some criticism = great feedback</li>
+							<li>Got some validation from the community</li>
+						</ul>
+						<aside class="notes">
+							***(open old and new diaspora site on tabs)***
+							I wanted to start making a bold move: a whole redesign of the Diaspora Foundation site.
+							This goes against some of the UX methods I talked about in this talk, but it was good to set a starting point and get the discussion rolling.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Going back a step</h2>
+						<ul>
+							<li>Realized there was an identity problem</li>
+							<li>Get to work on identity first</li>
+							<li>Find out some identity inconsistencies:
+								<p>Helvetica vs. Roboto, etc</p>
+							</li>
+							<li>Started an <a href="https://github.com/pablocubico/diaspora-identity">identity project on github</a>, made with Inkscape</li>
+						</ul>
+						<aside class="notes">
+							With the Diaspora foundation redesign, I found there were some
+							differences about identity in the community. So I decided I needed to
+							help diasporians out and tackle identity first.
+							Identity would give us the first choices on font, colors, and consistency.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Next steps (2015)</h2>
+						<ul>
+							<li>Get the UI team engaged</li>
+							<li>Work for consistency</li>
+							<li>Find proper tools for distributed work</li>
+							<li>Build a broader roadmap</li>
+							<li><span class="fragment highlight-blue">Want to join?</span></li>
+						</ul>
+						<aside class="notes">
+							There are already some awesome guys working and giving feedback on UI,
+							as Fla, Steffan, Goobertron, Augier, and more,
+							so this is a great opportunity to do some planning.
+							You'll find some of them hanging around on the Diaspora booth. Free stickers included.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Main drawback: TIME</h2>
+						<ul>
+							<li>Don't have money, have to work</li>
+							<li>My speed for contributing sucks</li>
+							<li>Don't have a detailed roadmap yet for crowdfunding</li>
+							<li>Also, crowdfunding can't be just for me</li>
+						</ul>
+						<aside class="notes">
+							My contribution pace plainly sucks, I hope I could do better next year.
+							I thought about crowd funding but I think it would be unfair to ask for money for myself.
+							Right now, I think that we could do a crowd funding campaign once we set a good roadmap,
+							some prototypes, and a UI team, then we can do a campaign to sustain the UI team as a whole.
+						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h1>Every Pixel Hurts</h1>
+						<h2>Building an open UX ecosystem</h2>
+						<h3>everypixelhurts.tumblr.com</h3>
+						<ul>
+							<li>Building free software UX tools</li>
+							<li>Contact place for designers</li>
+							<li>Discuss sustainability</li>
+						</ul>
+						<aside class="notes">
+							I'm trying to build an open UX ecosystem with the name of this talk: "Every Pixel Hurts".
+							I have some ideas that I want to share with you.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Build free web-based UX tools</h2>
+						<h3>Coders wanted</h3>
+						<ul>
+							<li>Invision-like clickable prototyping</li>
+							<li>User test recorders (screencast)</li>
+							<li>Design voting app</li>
+						</ul>
+						<aside class="notes">
+							These are some tools that I want to turn into reality. Tried several free or closed ones
+							in "free mode" but none do the job right. If you wanna join some of these projects, just say so!
+						</aside>
+					</section>
+
+					<section>
+						<h2>Build a community</h2>
+						<ul>
+							<li>A place for designers to offer collaboration</li>
+							<li>A place for devs to seek for designers</li>
+							<li>Share knowledge, write articles</li>
+							<li>Teach about open formats</li>
+							<li>Teach about open tools (Gimp, Inkscape, etc)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Funding</h2>
+						<p>
+							How? How to raise money for this?<br>
+							Got any ideas? Please tell!.<br>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>A call for designers</h2>
+						<aside class="notes">
+							Last but not least, I want to make a call for designers.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Ask yourself: what do you love?</h2>
+						<h2>Money or design?</h2>
+						<aside class="notes">
+							Coders are really used to collaborating and sharing knowdlege and value. If you love design more than money, then there are tons of opportunities to collaborate.
+						</aside>
+					</section>
+
+					<section>
+						<img style="max-width: 40%" src="img/illya.jpg" alt="">
+					</section>
+
+					<section>
+						<blockquote class="prettyBig prettyPadded">
+						"Build free software for freedom, not propietary malware for cops."<br>
+						-Jacob Appelbaum
+						</blockquote>
+					</section>
+
+
+				</section>
+
+			</div>
+
+		</div>
+
+	</body>
+</html>
