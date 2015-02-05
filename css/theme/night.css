@@ -12,7 +12,7 @@ body {
   background-color: #111111; }
 
 .reveal {
-  font-family: "Open Sans", sans-serif;
+  font-family: "open_sansregular", sans-serif;
   font-size: 30px;
   font-weight: normal;
   letter-spacing: -0.02em;
@@ -34,8 +34,8 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #eeeeee;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+  font-family: "open_sansregular", sans-serif;
+  font-weight: 600;
   line-height: 0.9em;
   letter-spacing: -0.03em;
   text-transform: none;

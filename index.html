@@ -144,6 +144,31 @@
 				transition: .3s background;
 				background: #555;
 			}
+
+			#fixedSlideNotes {
+				transition: all .5s;
+				position: fixed;
+				bottom: -200px;
+				line-height: 1.3;
+				width: 85%;
+				height: 150px;
+				background: rgba(0,0,0,.8);
+				padding: 20px;
+				color: #eee;
+				font-family: "Open Sans";
+				z-index: 999999; /* 1 bazillion */
+			}
+
+			#fixedSlideNotes.visible {
+				opacity: 1;
+				bottom: 0;
+			}
+
+			#fixedSlideNotes.hidden {
+				opacity: 0;
+				bottom: -200px;
+			}
+
 		</style>
 
 		<!--[if lt IE 9]>
@@ -164,6 +189,7 @@
 					<img src="img/ephlogo.png" id="ephlogo">
 					<h4>A quest for really open UX design</h4>
 					<h5>Pablo Cúbico - FOSDEM 2015</h5>
+					<p>Psst!: Press V to see the slide notes</p>
 				</section>
 
 				<section>
@@ -360,7 +386,7 @@
 						<h2>"Free Software UX sucks"</h2>
 						<h3 class="fragment">"Commercial software does better"</h3>
 						<aside class="notes">
-							I hate this quotes. This is yet another misconception, and a generalisation that really hurts our community.
+							I hate this quotes. This is yet another misconception, it's an unfair comparison and a generalisation that really hurts our community.
 							Also, big corporations spend a lot of money to convince you that their UX is good. Let me show you an example from real life.
 						</aside>
 					</section>
@@ -978,6 +1004,8 @@
 
 		</div>
 
+		<div id="fixedSlideNotes" class="hidden"></div>
+
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 
@@ -1038,8 +1066,47 @@
 					} else {
 						setTheInterval();
 					}
+					Reveal.showNotes();
 				} );
 
+			});
+
+			Reveal.notesAreVisible = false;
+
+			Reveal.hideNotes = function() {
+				var fixedNotes = document.getElementById("fixedSlideNotes");
+				fixedNotes.className = "hidden";
+			}
+
+			Reveal.showNotes = function(noteText) {
+				console.log("slide changed, showing");
+				if (!!Reveal.notesAreVisible) {
+					console.log("go show");
+					var currentSlideHasNotes = Reveal.getCurrentSlide().lastChild.previousSibling.className == 'notes';
+					if (currentSlideHasNotes) {
+						console.log("it has notes");
+						console.log(Reveal.getCurrentSlide().lastChild.previousSibling);
+						var noteHtml = Reveal.getCurrentSlide().lastChild.previousSibling.innerHTML;
+						var fixedNotes = document.getElementById("fixedSlideNotes");
+						fixedNotes.innerHTML = noteHtml;
+						fixedNotes.className = "visible";
+					} else {
+						Reveal.hideNotes();
+					}
+				}
+			}
+
+			document.addEventListener("keyup", function(e) {
+				if (String.fromCharCode(e.keyCode) == "V") {				
+					e.stopPropagation();
+					e.preventDefault();
+					Reveal.notesAreVisible = !Reveal.notesAreVisible;
+					if (Reveal.notesAreVisible) { 
+						Reveal.showNotes();
+					} else {
+						Reveal.hideNotes();
+					}
+				}
 			});
 
 		</script>
